@@ -46,6 +46,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.querySelectorAll('.nav-links a');
     const navMenu = document.querySelector('.nav-links');
     const navToggle = document.querySelector('.nav-toggle');
+    const closedMenuIcon = '<i class="fas fa-ellipsis-vertical"></i>';
+    const openMenuIcon = '<i class="fas fa-xmark"></i>';
     
     navLinks.forEach(link => {
         if (link.getAttribute('href') === currentPage) {
@@ -56,19 +58,20 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     if (navMenu && navToggle) {
+        navToggle.innerHTML = closedMenuIcon;
         navToggle.addEventListener('click', () => {
             const isOpen = navMenu.classList.toggle('open');
             navToggle.setAttribute('aria-expanded', String(isOpen));
             navToggle.innerHTML = isOpen
-                ? '<i class="fas fa-xmark"></i>'
-                : '<i class="fas fa-bars"></i>';
+                ? openMenuIcon
+                : closedMenuIcon;
         });
 
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
                 navMenu.classList.remove('open');
                 navToggle.setAttribute('aria-expanded', 'false');
-                navToggle.innerHTML = '<i class="fas fa-bars"></i>';
+                navToggle.innerHTML = closedMenuIcon;
             });
         });
 
@@ -76,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (window.innerWidth > 768) {
                 navMenu.classList.remove('open');
                 navToggle.setAttribute('aria-expanded', 'false');
-                navToggle.innerHTML = '<i class="fas fa-bars"></i>';
+                navToggle.innerHTML = closedMenuIcon;
             }
         });
     }

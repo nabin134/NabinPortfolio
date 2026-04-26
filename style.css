@@ -956,6 +956,7 @@ section {
 
     nav {
         position: relative;
+        z-index: 1500;
     }
 
     .hero {
@@ -991,7 +992,7 @@ section {
     }
 
     .nav-links {
-        display: none;
+        display: flex;
         position: absolute;
         top: calc(100% + 12px);
         left: 0;
@@ -1004,10 +1005,18 @@ section {
         box-shadow: 0 12px 26px rgba(25, 44, 70, 0.16);
         overflow: hidden;
         z-index: 1200;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-8px);
+        pointer-events: none;
+        transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
     }
 
     .nav-links.open {
-        display: flex;
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+        pointer-events: auto;
     }
 
     .nav-links li {
@@ -2342,6 +2351,7 @@ section {
     max-width: 1220px;
     margin: 0 auto;
     padding: 110px 20px 40px;
+    overflow-x: clip;
 }
 
 .contact-ref-hero {
@@ -2398,6 +2408,7 @@ section {
     border: 1px solid #d8dbdc;
     border-top: 0;
     background: #f8f8f8;
+    border-radius: 0 0 14px 14px;
 }
 
 .contact-ref-form-wrap,
@@ -2666,7 +2677,7 @@ section {
     }
 
     .contact-ref-card p {
-        font-size: 1.02rem;
+        font-size: 0.98rem;
         word-break: break-word;
     }
 
