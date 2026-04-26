@@ -44,6 +44,8 @@ if (contactButton && document.querySelector('#contact')) {
 document.addEventListener('DOMContentLoaded', () => {
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
     const navLinks = document.querySelectorAll('.nav-links a');
+    const navMenu = document.querySelector('.nav-links');
+    const navToggle = document.querySelector('.nav-toggle');
     
     navLinks.forEach(link => {
         if (link.getAttribute('href') === currentPage) {
@@ -52,6 +54,32 @@ document.addEventListener('DOMContentLoaded', () => {
             link.classList.remove('active');
         }
     });
+
+    if (navMenu && navToggle) {
+        navToggle.addEventListener('click', () => {
+            const isOpen = navMenu.classList.toggle('open');
+            navToggle.setAttribute('aria-expanded', String(isOpen));
+            navToggle.innerHTML = isOpen
+                ? '<i class="fas fa-xmark"></i>'
+                : '<i class="fas fa-bars"></i>';
+        });
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('open');
+                navToggle.setAttribute('aria-expanded', 'false');
+                navToggle.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                navMenu.classList.remove('open');
+                navToggle.setAttribute('aria-expanded', 'false');
+                navToggle.innerHTML = '<i class="fas fa-bars"></i>';
+            }
+        });
+    }
 
     // Animate skill bars when they come into view
     const skillBars = document.querySelectorAll('.skill-progress');

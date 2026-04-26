@@ -51,6 +51,20 @@ nav {
     gap: 2rem;
 }
 
+.nav-toggle {
+    display: none;
+    border: 1px solid #d3d9e4;
+    background: #fff;
+    color: #1f2f45;
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+}
+
 .nav-links a {
     text-decoration: none;
     color: var(--text-light);
@@ -940,6 +954,10 @@ section {
         padding: 20px;
     }
 
+    nav {
+        position: relative;
+    }
+
     .hero {
         flex-direction: column;
         padding: 120px 20px 40px;
@@ -972,8 +990,41 @@ section {
         height: 300px;
     }
 
+    .nav-toggle {
+        display: inline-flex;
+    }
+
     .nav-links {
         display: none;
+        position: absolute;
+        top: calc(100% + 12px);
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        gap: 0;
+        background: #fff;
+        border: 1px solid #dce3ef;
+        border-radius: 12px;
+        box-shadow: 0 12px 26px rgba(25, 44, 70, 0.16);
+        overflow: hidden;
+        z-index: 1200;
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .nav-links li {
+        border-bottom: 1px solid #edf1f7;
+    }
+
+    .nav-links li:last-child {
+        border-bottom: 0;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 12px 14px;
     }
 
     section {
