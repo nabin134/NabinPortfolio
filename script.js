@@ -31,11 +31,14 @@ window.addEventListener('scroll', () => {
 });
 
 // Contact button click handler
-document.querySelector('.contact-btn').addEventListener('click', () => {
-    document.querySelector('#contact').scrollIntoView({
-        behavior: 'smooth'
+const contactButton = document.querySelector('.contact-btn');
+if (contactButton && document.querySelector('#contact')) {
+    contactButton.addEventListener('click', () => {
+        document.querySelector('#contact').scrollIntoView({
+            behavior: 'smooth'
+        });
     });
-});
+}
 
 // Add active class to current page link
 document.addEventListener('DOMContentLoaded', () => {

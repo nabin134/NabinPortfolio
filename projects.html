@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects</title>
+    <title>Projects - Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
@@ -20,35 +20,71 @@
             </ul>
         </nav>
     </header>
-    <main>
-        <section class="projects-section">
-            <h2 class="projects-title">My Projects</h2>
-            <div class="projects-container">
-                <div class="project-card">
-                    <h3>kjijijij</h3>
-                    <p>hhhjhij</p>
-                    <a href="#" class="github-btn"><i class="fab fa-github"></i> GitHub</a>
+    <main class="projects-showcase-page">
+        <section class="projects-showcase">
+            <div class="projects-showcase-head">
+                <h1>Selected Work</h1>
+                <p>Real-world systems I have built using Django, HTML, CSS, and JavaScript.</p>
+                <div class="projects-filters">
+                    <span>All</span>
+                    <span>Django</span>
+                    <span>Web Apps</span>
+                    <span>Final Year</span>
                 </div>
-                <div class="project-card">
-                    <h3>hihihi</h3>
-                    <p>Built an eCommerce website for GROCERYGO, enabling online shopping for groceries with a user-friendly interface and secure payment options.</p>
-                    <a href="#" class="github-btn"><i class="fab fa-github"></i> GitHub</a>
+            </div>
+
+            <article class="project-featured-card">
+                <div class="project-visual project-blue"><i class="fa-solid fa-droplet"></i></div>
+                <div class="project-detail">
+                    <p class="project-label">Healthcare Platform</p>
+                    <h2>Blood Donation System</h2>
+                    <p>This project enables users to request and donate blood through a user-friendly platform built with Django, HTML, CSS, and JavaScript.</p>
+                    <div class="project-tags">
+                        <span>Django</span><span>HTML/CSS</span><span>JavaScript</span>
+                    </div>
+                    <a href="https://github.com/nabin134/Blood-Donation-SYP-.git" target="_blank" rel="noopener noreferrer">View Project <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
-                <div class="project-card">
-                    <h3>BRJ Furniture Store Management System</h3>
-                    <p>Created a Python program to manage furniture stock and transactions using a text file. It updates inventory based on sales or orders and generates receipts with transaction details. Tools Used: Python, File Handling, DateTime</p>
-                    <a href="#" class="github-btn"><i class="fab fa-github"></i> GitHub</a>
-                </div>
-                <div class="project-card">
-                    <h3>Portfolio Website</h3>
-                    <p></p>
-                    <a href="#" class="github-btn"><i class="fab fa-github"></i> GitHub</a>
-                </div>
-                <div class="project-card">
-                    <h3></h3>
-                    <p> bbbbbb</p>
-                    <a href="#" class="github-btn"><i class="fab fa-github"></i> GitHub</a>
-                </div>
+            </article>
+
+            <div class="projects-card-grid">
+                <article class="project-show-card">
+                    <div class="project-visual project-green"><i class="fa-solid fa-scissors"></i></div>
+                    <div class="project-detail">
+                        <p class="project-label">Salon Management</p>
+                        <h3>PreetyPick</h3>
+                        <p>Digital salon management system with full CRUD for appointments, services, clients, staff, and billing.</p>
+                        <div class="project-tags">
+                            <span>Java</span><span>CRUD</span>
+                        </div>
+                        <a href="https://github.com/nabin134/PreetyPick.git" target="_blank" rel="noopener noreferrer">View Project <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="project-show-card">
+                    <div class="project-visual project-rust"><i class="fa-solid fa-pen-nib"></i></div>
+                    <div class="project-detail">
+                        <p class="project-label">Content Platform</p>
+                        <h3>Blog Management System</h3>
+                        <p>A comprehensive Django-based blog system with admin approval workflow, categories, tags, and dashboard support.</p>
+                        <div class="project-tags">
+                            <span>Django</span><span>CMS</span><span>Admin Workflow</span>
+                        </div>
+                        <a href="https://github.com/RupSagarGautam/Blog_Management_System.git" target="_blank" rel="noopener noreferrer">View Project <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="project-show-card">
+                    <div class="project-visual project-purple"><i class="fa-solid fa-seedling"></i></div>
+                    <div class="project-detail">
+                        <p class="project-label">Final Year Project</p>
+                        <h3>Farmity</h3>
+                        <p>Agricultural platform connecting farmers, vendors, and agricultural experts in one place to improve collaboration and market access.</p>
+                        <div class="project-tags">
+                            <span>Agritech</span><span>Final Year</span><span>Platform</span>
+                        </div>
+                        <a href="https://nabin-regmi-farmity.onrender.com" target="_blank" rel="noopener noreferrer">Live Demo <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </article>
             </div>
         </section>
     </main>
