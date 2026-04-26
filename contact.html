@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact</title>
-    <link rel="stylesheet" href="style.css?v=20260426">
+    <link rel="stylesheet" href="style.css?v=20260426-contactfix2">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
@@ -99,6 +99,23 @@
             </aside>
         </section>
     </main>
-    <script src="script.js?v=20260426"></script>
+    <script src="script.js?v=20260426-contactfix2"></script>
+    <script>
+        (function () {
+            const navMenu = document.querySelector('.nav-links');
+            const navToggle = document.querySelector('.nav-toggle');
+            if (!navMenu || !navToggle) return;
+
+            const closedMenuIcon = '<i class="fas fa-ellipsis-vertical"></i>';
+            const openMenuIcon = '<i class="fas fa-xmark"></i>';
+
+            navToggle.innerHTML = closedMenuIcon;
+            navToggle.addEventListener('click', function () {
+                const isOpen = navMenu.classList.toggle('open');
+                navToggle.setAttribute('aria-expanded', String(isOpen));
+                navToggle.innerHTML = isOpen ? openMenuIcon : closedMenuIcon;
+            });
+        })();
+    </script>
 </body>
 </html> 
