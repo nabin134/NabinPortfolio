@@ -36,13 +36,13 @@
                 <h2>Send a Message</h2>
                 <form class="contact-ref-form">
                     <label>Your name
-                        <input type="text" placeholder="Your full name" required>
+                        <input type="text" name="name" placeholder="Your full name" required>
                     </label>
                     <label>Email address
-                        <input type="email" placeholder="regminabin802@gmail.com" required>
+                        <input type="email" name="email" placeholder="you@example.com" required>
                     </label>
                     <label>Project type
-                        <select required>
+                        <select name="projectType" required>
                             <option value="">Select a type...</option>
                             <option>Web Application</option>
                             <option>Portfolio / Personal Site</option>
@@ -51,9 +51,12 @@
                         </select>
                     </label>
                     <label>Tell me about your project
-                        <textarea placeholder="What are you working on? Share your idea here..." required></textarea>
+                        <textarea name="message" placeholder="What are you working on? Share your idea here..." required></textarea>
                     </label>
+                    <input type="hidden" name="_subject" value="New portfolio contact message">
+                    <input type="hidden" name="_captcha" value="false">
                     <button type="submit" class="contact-ref-submit">Send message <i class="fa-solid fa-arrow-right"></i></button>
+                    <p class="contact-form-status" aria-live="polite"></p>
                 </form>
             </article>
 

@@ -98,4 +98,49 @@ document.addEventListener('DOMContentLoaded', () => {
     skillBars.forEach(bar => {
         observer.observe(bar);
     });
+
+    // Contact form async submit (real-time feedback)
+    const contactForm = document.querySelector('.contact-ref-form');
+    if (contactForm) {
+        const submitButton = contactForm.querySelector('.contact-ref-submit');
+        const statusText = contactForm.querySelector('.contact-form-status');
+
+        contactForm.addEventListener('submit', async (event) => {
+            event.preventDefault();
+
+            if (!submitButton || !statusText) return;
+
+            const originalButtonHtml = submitButton.innerHTML;
+            submitButton.disabled = true;
+            submitButton.innerHTML = 'Sending...';
+            statusText.classList.remove('error');
+            statusText.textContent = 'Sending your message...';
+
+            const formData = new FormData(contactForm);
+
+            try {
+                const response = await fetch('https://formsubmit.co/ajax/regminabin802@gmail.com', {
+                    method: 'POST',
+                    headers: { 'Accept': 'application/json' },
+                    body: formData
+                });
+
+                const result = await response.json();
+
+                if (response.ok && result.success === 'true') {
+                    statusText.textContent = 'Message sent successfully. I will get back to you soon.';
+                    contactForm.reset();
+                } else {
+                    statusText.classList.add('error');
+                    statusText.textContent = 'Unable to send message right now. Please try again.';
+                }
+            } catch (error) {
+                statusText.classList.add('error');
+                statusText.textContent = 'Network issue. Please check your connection and try again.';
+            } finally {
+                submitButton.disabled = false;
+                submitButton.innerHTML = originalButtonHtml;
+            }
+        });
+    }
 }); 
